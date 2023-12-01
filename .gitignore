@@ -4,3 +4,6 @@
 *.ptx
 *.cubin
 *.fatbin
+/.vs/MaxThreadPerBlock
+/MaxThreadPerBlock/x64/Debug
+/x64/Debug
