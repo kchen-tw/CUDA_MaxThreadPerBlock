@@ -7,3 +7,5 @@
 /.vs/MaxThreadPerBlock
 /MaxThreadPerBlock/x64/Debug
 /x64/Debug
+/.vs/CUDA_MaxThreadPerBlock
+/CUDA_MaxThreadPerBlock/x64/Debug
