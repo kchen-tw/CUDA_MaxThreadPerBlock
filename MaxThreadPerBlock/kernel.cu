@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <cuda_runtime.h>
 
-
+using namespace std;
 
 int main()
 {
@@ -10,12 +10,12 @@ int main()
     cudaGetDevice(&deviceId);
 
     // 顯示當前使用的設備 ID
-    std::cout << "Device: " << deviceId << std::endl;
+    cout << "Device: " << deviceId << endl;
 
     // 獲取硬體的靜態限制每個線程塊可容納的最大線程數
     int maxThreadsPerBlock;
     cudaDeviceGetAttribute(&maxThreadsPerBlock, cudaDevAttrMaxThreadsPerBlock, deviceId);
-    std::cout << "Max Threads Per Block :" << maxThreadsPerBlock << std::endl;
+    cout << "Max Threads Per Block :" << maxThreadsPerBlock << endl;
 
     // 獲取每個線程塊的最大維度
     int maxThreadsDimX, maxThreadsDimY, maxThreadsDimZ;
@@ -23,9 +23,9 @@ int main()
     cudaDeviceGetAttribute(&maxThreadsDimY, cudaDevAttrMaxBlockDimY, deviceId);
     cudaDeviceGetAttribute(&maxThreadsDimZ, cudaDevAttrMaxBlockDimZ, deviceId);
 
-    std::cout << "Max Threads Dim X: " << maxThreadsDimX << std::endl;
-    std::cout << "Max Threads Dim Y: " << maxThreadsDimY << std::endl;
-    std::cout << "Max Threads Dim Z: " << maxThreadsDimZ << std::endl;
+    cout << "Max Threads Dim X: " << maxThreadsDimX << endl;
+    cout << "Max Threads Dim Y: " << maxThreadsDimY << endl;
+    cout << "Max Threads Dim Z: " << maxThreadsDimZ << endl;
 
     // 獲取每個網格的最大維度
     int maxGridDimX, maxGridDimY, maxGridDimZ;
@@ -33,15 +33,15 @@ int main()
     cudaDeviceGetAttribute(&maxGridDimY, cudaDevAttrMaxGridDimY, deviceId);
     cudaDeviceGetAttribute(&maxGridDimZ, cudaDevAttrMaxGridDimZ, deviceId);
 
-    std::cout << "Max Grid Dim X: " << maxGridDimX << std::endl;
-    std::cout << "Max Grid Dim Y: " << maxGridDimY << std::endl;
-    std::cout << "Max Grid Dim Z: " << maxGridDimZ << std::endl;
+    cout << "Max Grid Dim X: " << maxGridDimX << endl;
+    cout << "Max Grid Dim Y: " << maxGridDimY << endl;
+    cout << "Max Grid Dim Z: " << maxGridDimZ << endl;
 
     // 獲取每個線程束的大小
     int warpSize;
     cudaDeviceGetAttribute(&warpSize, cudaDevAttrWarpSize, deviceId);
 
-    std::cout << "Warp Size: " << warpSize << std::endl;
+    cout << "Warp Size: " << warpSize << endl;
 
     return 0;
 }
